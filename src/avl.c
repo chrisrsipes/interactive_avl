@@ -16,6 +16,13 @@
 #define DEBUG 1
 #define ERROR 1
 
+node *createNode(int data);
+node *destroyNode(node *ptr);
+
+int max(int a, int b);
+int getHeight(node *root);
+int calculateHeight(node *root);
+
 node *createNode(int data) {
   node *ptr = malloc(sizeof(node));
 

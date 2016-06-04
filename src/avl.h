@@ -16,15 +16,11 @@ typedef struct node {
   struct node *left, *right;
 } node;
 
-node *createNode(int data);
-node *destroyNode(node *ptr);
 node *destroyTree(node *root);
 node *insert(node *root, int data);
 node *delete(node *root, int query);
 int find(node *root, int query);
-int max(int a, int b);
-int getHeight(node *root);
-int calculateHeight(node *root);
+
 void inorder(node *root);
 void inorder_verbose(node *root);
 
