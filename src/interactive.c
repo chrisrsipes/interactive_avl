@@ -153,5 +153,7 @@ int main (void) {
     
   } while (command[0] != 'z');
 
+  free(command);
+
   return 0;
 }
