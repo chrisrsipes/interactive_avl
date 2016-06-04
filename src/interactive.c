@@ -26,6 +26,8 @@ void printMenu() {
   printf("i:#  insert #\n");
   printf("r:#  random insert # times\n");
   printf("f:#  find #\n");
+  printf("f:l  find min (low)\n");
+  printf("f:h  find max (high)\n");
   printf("p:i  print out the tree (inorder)\n");
   printf("p:v  print out the tree (inorder)(verbose)\n");
   printf("d:#  delete #\n");
@@ -60,15 +62,27 @@ node *captureRepeating(node *root, char *command) {
 }
 
 void captureFind(node *root, char *command) {
-  int data = atoi(&command[2]);
+  int data;
 
-  printf("searching for %d\n", data);
-
-  if (find(root, data))
-    printf("Found %d\n", data);
-  else
-    printf("Did not find %d\n", data);
+  // only looking for min / max
+  if (command[2] == 'l') {
+    printf("minimum = %d\n", findMin(root));
+  }
+  else if(command[2] == 'h') {
+    printf("maximum = %d\n", findMax(root));
+  }
+  else {
+    data = atoi(&command[2]);
   
+    printf("searching for %d\n", data);
+  
+    if (find(root, data))
+      printf("Found %d\n", data);
+    else
+      printf("Did not find %d\n", data);
+
+  }
+    
 }
 
 void capturePrint(node *root, char *command) {

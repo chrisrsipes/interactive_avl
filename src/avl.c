@@ -279,6 +279,34 @@ int calculateHeight(node *root) {
   return 1 + max(calculateHeight(root->left), calculateHeight(root->right));
 }
 
+int findMin(node *root) {
+  if (root == NULL) {
+    if (ERROR)
+      printf("can't find minimum of empty tree\n");
+    return INT_MIN;
+  }
+
+  // traverse all the way to the left
+  while (root->left != NULL) 
+    root = root->left;
+
+  return root->data;
+}
+
+int findMax(node *root) {
+  if (root == NULL) {
+    if (ERROR)
+      printf("can't find maximum of empty tree\n");
+    return INT_MIN;
+  }
+
+  // traverse all the way to the right
+  while (root->right != NULL) 
+    root = root->right;
+
+  return root->data;
+}
+
 void inorder(node *root) {
 
   if (root == NULL) {
