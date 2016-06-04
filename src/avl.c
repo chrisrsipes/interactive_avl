@@ -306,7 +306,7 @@ void inorder_verbose(node *root) {
   if (root->left != NULL)
     inorder_verbose(root->left);
 
-  printf("%d (height = %d)\n", root->data, calculateHeight(root));
+  printf("%d (height = %d)\n", root->data, getHeight(root));
 
   if (root->right != NULL)
     inorder_verbose(root->right);
