@@ -24,7 +24,9 @@ int getHeight(node *root);
 int calculateHeight(node *root);
 
 node *createNode(int data) {
-  node *ptr = malloc(sizeof(node));
+  node *ptr = NULL;
+
+  ptr = malloc(sizeof(node));
 
   if (ptr == NULL) {
     if (ERROR) 
